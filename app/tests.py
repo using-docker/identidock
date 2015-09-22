@@ -16,7 +16,7 @@ class TestCase(unittest.TestCase):
 
     def test_html_escaping(self):
         page = self.app.post("/", data=dict(name='"><b>TEST</b><!--'))
-        assert '<bb>' not in str(page.data)
+        assert 'b' not in str(page.data)
 
 
 if __name__ == '__main__':
